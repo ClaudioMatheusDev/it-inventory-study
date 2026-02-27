@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#F0F4F8"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configuração de Setup"
+        android:textColor="#2C3E50"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layoutChecks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selecione Periféricos:"
+            android:textStyle="bold" />
+
+        <CheckBox android:id="@+id/chkTeclado" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Teclado Mecânico" />
+        <CheckBox android:id="@+id/chkMouse" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mouse Gamer" />
+        <CheckBox android:id="@+id/chkMonitor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Monitor 144Hz" />
+        <CheckBox android:id="@+id/chkHeadset" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Headset 7.1" />
+        <CheckBox android:id="@+id/chkWebcam" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Webcam Full HD" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rgArmazenamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disco Principal:"
+            android:textStyle="bold" />
+
+        <RadioButton android:id="@+id/rbSSD" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SSD NVMe" />
+        <RadioButton android:id="@+id/rbHDD" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="HD Sata" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/swBackup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Ativar Backup Automático?"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutChecks" />
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:text="SALVAR CONFIGURAÇÃO"
+        android:backgroundTint="#34495E"
+        app:layout_constraintTop_toBottomOf="@id/swBackup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
